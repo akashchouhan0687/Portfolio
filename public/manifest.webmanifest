@@ -1,0 +1,10 @@
+{
+  "name": "Akash Chouhan — Full-Stack Developer",
+  "short_name": "Akash Chouhan — Full-Stack Developer",
+  "description": "Portfolio of Akash Chouhan, a developer building fast, thoughtful web products.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#f7f4ec",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

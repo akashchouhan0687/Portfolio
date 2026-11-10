@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-body: "Satoshi", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-canvas: oklch(0.97 0.012 90);
+  --color-ink: oklch(0.18 0.02 264);
+  --color-accent: oklch(0.62 0.21 38);
+  --color-mute: oklch(0.45 0.02 264);
+}
+
+html, body { @apply bg-(--color-canvas) text-(--color-ink) font-body antialiased; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+*, *::before, *::after { box-sizing: border-box; }
+::selection { background: var(--color-accent); color: white; }
+
+.label { @apply font-mono text-xs uppercase tracking-[0.18em] text-(--color-mute); }
+.cursor-on, .cursor-on a, .cursor-on button { cursor: none; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 32s linear infinite; }
+.marquee.rev { animation-direction: reverse; animation-duration: 40s; }
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+@keyframes blink { 50% { opacity: 0.2; } }
+.blink { animation: blink 1.6s ease-in-out infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin 18s linear infinite; }
+.outline-text { -webkit-text-stroke: 1.5px var(--color-ink); color: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee, .spin-slow, .blink { animation: none; }
+}
